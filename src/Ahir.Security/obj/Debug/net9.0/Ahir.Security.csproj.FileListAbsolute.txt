@@ -1,0 +1,15 @@
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\bin\Debug\net9.0\Ahir.Security.deps.json
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\bin\Debug\net9.0\Ahir.Security.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\bin\Debug\net9.0\Ahir.Security.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\bin\Debug\net9.0\Ahir.Core.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\bin\Debug\net9.0\Ahir.Core.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Security.csproj.AssemblyReference.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Security.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Security.AssemblyInfoInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Security.AssemblyInfo.cs
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Security.csproj.CoreCompileInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Sec.62A948BF.Up2Date
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Security.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\refint\Ahir.Security.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Security.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\ref\Ahir.Security.dll

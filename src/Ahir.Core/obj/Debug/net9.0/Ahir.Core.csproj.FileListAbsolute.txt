@@ -1,0 +1,12 @@
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\bin\Debug\net9.0\Ahir.Core.deps.json
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\bin\Debug\net9.0\Ahir.Core.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\bin\Debug\net9.0\Ahir.Core.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\Ahir.Core.csproj.AssemblyReference.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\Ahir.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\Ahir.Core.AssemblyInfoInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\Ahir.Core.AssemblyInfo.cs
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\Ahir.Core.csproj.CoreCompileInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\Ahir.Core.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\refint\Ahir.Core.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\Ahir.Core.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\ref\Ahir.Core.dll

@@ -1,0 +1,583 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.CLI\\Ahir.CLI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.CLI\\Ahir.CLI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.CLI\\Ahir.CLI.csproj",
+        "projectName": "Ahir.CLI",
+        "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.CLI\\Ahir.CLI.csproj",
+        "packagesPath": "C:\\Users\\merte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.CLI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj"
+              },
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Server\\Ahir.Server.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Server\\Ahir.Server.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "System.CommandLine": {
+              "target": "Package",
+              "version": "[2.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj",
+        "projectName": "Ahir.Core",
+        "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj",
+        "packagesPath": "C:\\Users\\merte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "System.IO.Hashing": {
+              "target": "Package",
+              "version": "[10.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Database\\Ahir.Database.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Database\\Ahir.Database.csproj",
+        "projectName": "Ahir.Database",
+        "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Database\\Ahir.Database.csproj",
+        "packagesPath": "C:\\Users\\merte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Database\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "K4os.Compression.LZ4": {
+              "target": "Package",
+              "version": "[1.3.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Plugin\\Ahir.Plugin.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Plugin\\Ahir.Plugin.csproj",
+        "projectName": "Ahir.Plugin",
+        "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Plugin\\Ahir.Plugin.csproj",
+        "packagesPath": "C:\\Users\\merte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Plugin\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\Ahir.Realtime.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\Ahir.Realtime.csproj",
+        "projectName": "Ahir.Realtime",
+        "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\Ahir.Realtime.csproj",
+        "packagesPath": "C:\\Users\\merte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Security\\Ahir.Security.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Security\\Ahir.Security.csproj",
+        "projectName": "Ahir.Security",
+        "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Security\\Ahir.Security.csproj",
+        "packagesPath": "C:\\Users\\merte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Security\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Konscious.Security.Cryptography.Argon2": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.21.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Server\\Ahir.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Server\\Ahir.Server.csproj",
+        "projectName": "Ahir.Server",
+        "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Server\\Ahir.Server.csproj",
+        "packagesPath": "C:\\Users\\merte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj"
+              },
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Database\\Ahir.Database.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Database\\Ahir.Database.csproj"
+              },
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Plugin\\Ahir.Plugin.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Plugin\\Ahir.Plugin.csproj"
+              },
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\Ahir.Realtime.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\Ahir.Realtime.csproj"
+              },
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Security\\Ahir.Security.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Security\\Ahir.Security.csproj"
+              },
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Storage\\Ahir.Storage.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Storage\\Ahir.Storage.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Serilog": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Storage\\Ahir.Storage.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Storage\\Ahir.Storage.csproj",
+        "projectName": "Ahir.Storage",
+        "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Storage\\Ahir.Storage.csproj",
+        "packagesPath": "C:\\Users\\merte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Storage\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj": {
+                "projectPath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\bin\Debug\net9.0\Ahir.SDK.deps.json
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\bin\Debug\net9.0\Ahir.SDK.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\bin\Debug\net9.0\Ahir.SDK.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\bin\Debug\net9.0\Ahir.Core.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\bin\Debug\net9.0\Ahir.Core.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.csproj.AssemblyReference.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.AssemblyInfoInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.AssemblyInfo.cs
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.csproj.CoreCompileInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.csproj.Up2Date
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\refint\Ahir.SDK.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\ref\Ahir.SDK.dll

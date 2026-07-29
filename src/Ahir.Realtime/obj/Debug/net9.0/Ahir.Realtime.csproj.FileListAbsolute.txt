@@ -1,0 +1,15 @@
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\bin\Debug\net9.0\Ahir.Realtime.deps.json
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\bin\Debug\net9.0\Ahir.Realtime.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\bin\Debug\net9.0\Ahir.Realtime.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\bin\Debug\net9.0\Ahir.Core.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\bin\Debug\net9.0\Ahir.Core.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Realtime.csproj.AssemblyReference.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Realtime.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Realtime.AssemblyInfoInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Realtime.AssemblyInfo.cs
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Realtime.csproj.CoreCompileInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Rea.5584DB25.Up2Date
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Realtime.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\refint\Ahir.Realtime.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Realtime.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\ref\Ahir.Realtime.dll

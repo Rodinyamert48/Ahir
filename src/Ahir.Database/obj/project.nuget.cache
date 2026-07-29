@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jN/I/ZhNuzI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Database\\Ahir.Database.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\merte\\.nuget\\packages\\k4os.compression.lz4\\1.3.8\\k4os.compression.lz4.1.3.8.nupkg.sha512",
+    "C:\\Users\\merte\\.nuget\\packages\\system.io.hashing\\10.0.10\\system.io.hashing.10.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

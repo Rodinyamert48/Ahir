@@ -1,0 +1,15 @@
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\bin\Debug\net9.0\Ahir.Plugin.deps.json
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\bin\Debug\net9.0\Ahir.Plugin.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\bin\Debug\net9.0\Ahir.Plugin.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\bin\Debug\net9.0\Ahir.Core.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\bin\Debug\net9.0\Ahir.Core.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plugin.csproj.AssemblyReference.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plugin.AssemblyInfoInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plugin.AssemblyInfo.cs
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plugin.csproj.CoreCompileInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plu.B1411096.Up2Date
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plugin.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\refint\Ahir.Plugin.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plugin.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\ref\Ahir.Plugin.dll

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "HawPqwJs66s=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\Ahir.Realtime.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\merte\\.nuget\\packages\\system.io.hashing\\10.0.10\\system.io.hashing.10.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "lXIs+2qQQMw=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Storage\\Ahir.Storage.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\merte\\.nuget\\packages\\system.io.hashing\\10.0.10\\system.io.hashing.10.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

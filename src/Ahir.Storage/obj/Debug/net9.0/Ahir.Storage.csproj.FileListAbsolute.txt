@@ -1,0 +1,15 @@
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\bin\Debug\net9.0\Ahir.Storage.deps.json
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\bin\Debug\net9.0\Ahir.Storage.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\bin\Debug\net9.0\Ahir.Storage.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\bin\Debug\net9.0\Ahir.Core.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\bin\Debug\net9.0\Ahir.Core.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Storage.csproj.AssemblyReference.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Storage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Storage.AssemblyInfoInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Storage.AssemblyInfo.cs
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Storage.csproj.CoreCompileInputs.cache
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Sto.C6128562.Up2Date
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Storage.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\refint\Ahir.Storage.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Storage.pdb
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\ref\Ahir.Storage.dll

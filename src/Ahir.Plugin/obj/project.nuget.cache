@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tRdM9ibf9+g=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Plugin\\Ahir.Plugin.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\merte\\.nuget\\packages\\system.io.hashing\\10.0.10\\system.io.hashing.10.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}
