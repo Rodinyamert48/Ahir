@@ -81,3 +81,12 @@ C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\obj\Debug\net9.0\refint\Ahir.CLI.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\obj\Debug\net9.0\Ahir.CLI.pdb
 C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\obj\Debug\net9.0\Ahir.CLI.genruntimeconfig.cache
 C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\obj\Debug\net9.0\ref\Ahir.CLI.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\obj\Debug\net9.0\Ahir.CLI.sourcelink.json
+C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\bin\Debug\net9.0\OpenTelemetry.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\bin\Debug\net9.0\OpenTelemetry.Api.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\bin\Debug\net9.0\OpenTelemetry.Api.ProviderBuilderExtensions.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\bin\Debug\net9.0\OpenTelemetry.Exporter.Console.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\bin\Debug\net9.0\OpenTelemetry.Extensions.Hosting.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\bin\Debug\net9.0\OpenTelemetry.Instrumentation.AspNetCore.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\bin\Debug\net9.0\OpenTelemetry.Instrumentation.Runtime.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.CLI\bin\Debug\net9.0\Scalar.AspNetCore.dll

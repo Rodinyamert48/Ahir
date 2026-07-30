@@ -33,3 +33,4 @@ C:\Users\merte\Desktop\Ahır\src\Ahir.Server\obj\Debug\net9.0\Ahir.Server.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Server\obj\Debug\net9.0\refint\Ahir.Server.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Server\obj\Debug\net9.0\Ahir.Server.pdb
 C:\Users\merte\Desktop\Ahır\src\Ahir.Server\obj\Debug\net9.0\ref\Ahir.Server.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Server\obj\Debug\net9.0\Ahir.Server.sourcelink.json

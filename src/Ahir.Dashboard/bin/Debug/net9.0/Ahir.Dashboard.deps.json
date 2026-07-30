@@ -6,10 +6,10 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "Ahir.Dashboard/1.0.0": {
+      "Ahir.Dashboard/1.2.0": {
         "dependencies": {
-          "Ahir.Core": "1.0.0",
-          "Ahir.Server": "1.0.0"
+          "Ahir.Core": "1.2.0",
+          "Ahir.Server": "1.2.0"
         },
         "runtime": {
           "Ahir.Dashboard.dll": {}
@@ -84,6 +84,12 @@
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.0.25.52411"
           }
+        }
+      },
+      "Microsoft.Extensions.Configuration.EnvironmentVariables/9.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0"
         }
       },
       "Microsoft.Extensions.DependencyInjection/10.0.0": {
@@ -181,6 +187,18 @@
           }
         }
       },
+      "Microsoft.Extensions.Logging.Configuration/9.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "10.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Logging": "10.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Options": "10.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "9.0.0"
+        }
+      },
       "Microsoft.Extensions.Options/10.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
@@ -191,6 +209,15 @@
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.0.25.52411"
           }
+        }
+      },
+      "Microsoft.Extensions.Options.ConfigurationExtensions/9.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "10.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Options": "10.0.0",
+          "Microsoft.Extensions.Primitives": "10.0.0"
         }
       },
       "Microsoft.Extensions.Primitives/10.0.0": {
@@ -241,6 +268,96 @@
           "lib/net9.0/Microsoft.IdentityModel.Tokens.dll": {
             "assemblyVersion": "8.21.0.0",
             "fileVersion": "8.21.0.26203"
+          }
+        }
+      },
+      "OpenTelemetry/1.17.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.EnvironmentVariables": "9.0.0",
+          "Microsoft.Extensions.Diagnostics.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Logging.Configuration": "9.0.0",
+          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.17.0"
+        },
+        "runtime": {
+          "lib/net9.0/OpenTelemetry.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.17.0.2115"
+          }
+        }
+      },
+      "OpenTelemetry.Api/1.17.0": {
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "10.0.0"
+        },
+        "runtime": {
+          "lib/net9.0/OpenTelemetry.Api.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.17.0.2115"
+          }
+        }
+      },
+      "OpenTelemetry.Api.ProviderBuilderExtensions/1.17.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.0",
+          "OpenTelemetry.Api": "1.17.0"
+        },
+        "runtime": {
+          "lib/net9.0/OpenTelemetry.Api.ProviderBuilderExtensions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.17.0.2115"
+          }
+        }
+      },
+      "OpenTelemetry.Exporter.Console/1.17.0": {
+        "dependencies": {
+          "OpenTelemetry": "1.17.0"
+        },
+        "runtime": {
+          "lib/net9.0/OpenTelemetry.Exporter.Console.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.17.0.2115"
+          }
+        }
+      },
+      "OpenTelemetry.Extensions.Hosting/1.17.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "OpenTelemetry": "1.17.0"
+        },
+        "runtime": {
+          "lib/net9.0/OpenTelemetry.Extensions.Hosting.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.17.0.2115"
+          }
+        }
+      },
+      "OpenTelemetry.Instrumentation.AspNetCore/1.17.0": {
+        "dependencies": {
+          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.17.0"
+        },
+        "runtime": {
+          "lib/net8.0/OpenTelemetry.Instrumentation.AspNetCore.dll": {
+            "assemblyVersion": "1.17.0.1204",
+            "fileVersion": "1.17.0.1204"
+          }
+        }
+      },
+      "OpenTelemetry.Instrumentation.Runtime/1.17.0": {
+        "dependencies": {
+          "OpenTelemetry.Api": "1.17.0"
+        },
+        "runtime": {
+          "lib/net8.0/OpenTelemetry.Instrumentation.Runtime.dll": {
+            "assemblyVersion": "1.17.0.1215",
+            "fileVersion": "1.17.0.1215"
+          }
+        }
+      },
+      "Scalar.AspNetCore/2.16.16": {
+        "runtime": {
+          "lib/net9.0/Scalar.AspNetCore.dll": {
+            "assemblyVersion": "2.16.16.0",
+            "fileVersion": "2.16.16.0"
           }
         }
       },
@@ -424,97 +541,102 @@
           }
         }
       },
-      "Ahir.Core/1.0.0": {
+      "Ahir.Core/1.2.0": {
         "dependencies": {
           "System.IO.Hashing": "10.0.10"
         },
         "runtime": {
           "Ahir.Core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
-      "Ahir.Database/1.0.0": {
+      "Ahir.Database/1.2.0": {
         "dependencies": {
-          "Ahir.Core": "1.0.0",
+          "Ahir.Core": "1.2.0",
           "K4os.Compression.LZ4": "1.3.8"
         },
         "runtime": {
           "Ahir.Database.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
-      "Ahir.Plugin/1.0.0": {
+      "Ahir.Plugin/1.2.0": {
         "dependencies": {
-          "Ahir.Core": "1.0.0"
+          "Ahir.Core": "1.2.0"
         },
         "runtime": {
           "Ahir.Plugin.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
-      "Ahir.Realtime/1.0.0": {
+      "Ahir.Realtime/1.2.0": {
         "dependencies": {
-          "Ahir.Core": "1.0.0"
+          "Ahir.Core": "1.2.0"
         },
         "runtime": {
           "Ahir.Realtime.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
-      "Ahir.Security/1.0.0": {
+      "Ahir.Security/1.2.0": {
         "dependencies": {
-          "Ahir.Core": "1.0.0",
+          "Ahir.Core": "1.2.0",
           "Konscious.Security.Cryptography.Argon2": "1.3.1",
           "System.IdentityModel.Tokens.Jwt": "8.21.0"
         },
         "runtime": {
           "Ahir.Security.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
-      "Ahir.Server/1.0.0": {
+      "Ahir.Server/1.2.0": {
         "dependencies": {
-          "Ahir.Core": "1.0.0",
-          "Ahir.Database": "1.0.0",
-          "Ahir.Plugin": "1.0.0",
-          "Ahir.Realtime": "1.0.0",
-          "Ahir.Security": "1.0.0",
-          "Ahir.Storage": "1.0.0",
+          "Ahir.Core": "1.2.0",
+          "Ahir.Database": "1.2.0",
+          "Ahir.Plugin": "1.2.0",
+          "Ahir.Realtime": "1.2.0",
+          "Ahir.Security": "1.2.0",
+          "Ahir.Storage": "1.2.0",
+          "OpenTelemetry.Exporter.Console": "1.17.0",
+          "OpenTelemetry.Extensions.Hosting": "1.17.0",
+          "OpenTelemetry.Instrumentation.AspNetCore": "1.17.0",
+          "OpenTelemetry.Instrumentation.Runtime": "1.17.0",
+          "Scalar.AspNetCore": "2.16.16",
           "Serilog": "4.4.0",
           "Serilog.AspNetCore": "10.0.0"
         },
         "runtime": {
           "Ahir.Server.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
-      "Ahir.Storage/1.0.0": {
+      "Ahir.Storage/1.2.0": {
         "dependencies": {
-          "Ahir.Core": "1.0.0"
+          "Ahir.Core": "1.2.0"
         },
         "runtime": {
           "Ahir.Storage.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       }
     }
   },
   "libraries": {
-    "Ahir.Dashboard/1.0.0": {
+    "Ahir.Dashboard/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -567,6 +689,13 @@
       "sha512": "sha512-tMF9wNh+hlyYDWB8mrFCQHQmWHlRosol1b/N2Jrefy1bFLnuTlgSYmPyHNmz8xVQgs7DpXytBRWxGhG+mSTp0g==",
       "path": "microsoft.extensions.configuration.binder/10.0.0",
       "hashPath": "microsoft.extensions.configuration.binder.10.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.EnvironmentVariables/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v5R638eNMxksfXb7MFnkPwLPp+Ym4W/SIGNuoe8qFVVyvygQD5DdLusybmYSJEr9zc1UzWzim/ATKeIOVvOFDg==",
+      "path": "microsoft.extensions.configuration.environmentvariables/9.0.0",
+      "hashPath": "microsoft.extensions.configuration.environmentvariables.9.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/10.0.0": {
       "type": "package",
@@ -624,12 +753,26 @@
       "path": "microsoft.extensions.logging.abstractions/10.0.0",
       "hashPath": "microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Logging.Configuration/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H05HiqaNmg6GjH34ocYE9Wm1twm3Oz2aXZko8GTwGBzM7op2brpAA8pJ5yyD1OpS1mXUtModBYOlcZ/wXeWsSg==",
+      "path": "microsoft.extensions.logging.configuration/9.0.0",
+      "hashPath": "microsoft.extensions.logging.configuration.9.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Options/10.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-8oCAgXOow5XDrY9HaXX1QmH3ORsyZO/ANVHBlhLyCeWTH5Sg4UuqZeOTWJi6484M+LqSx0RqQXDJtdYy2BNiLQ==",
       "path": "microsoft.extensions.options/10.0.0",
       "hashPath": "microsoft.extensions.options.10.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options.ConfigurationExtensions/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ob3FXsXkcSMQmGZi7qP07EQ39kZpSBlTcAZLbJLdI4FIf0Jug8biv2HTavWmnTirchctPlq9bl/26CXtQRguzA==",
+      "path": "microsoft.extensions.options.configurationextensions/9.0.0",
+      "hashPath": "microsoft.extensions.options.configurationextensions.9.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/10.0.0": {
       "type": "package",
@@ -665,6 +808,62 @@
       "sha512": "sha512-xFnFEl4VrhAJEbqtRrpgfAACgkm6NYo7cWYKYROH00N9/M5OYrRwTP0lHsginnLrqPrseLcSqAueQNRCyGNsdw==",
       "path": "microsoft.identitymodel.tokens/8.21.0",
       "hashPath": "microsoft.identitymodel.tokens.8.21.0.nupkg.sha512"
+    },
+    "OpenTelemetry/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rMLOTftlMlTm7+MSrvXDHnJRjVkROFNKXHZrYjOsX+LankaFG7QSflx7qRRGjoqZoirohnxmJQ7GEb9occO4Gg==",
+      "path": "opentelemetry/1.17.0",
+      "hashPath": "opentelemetry.1.17.0.nupkg.sha512"
+    },
+    "OpenTelemetry.Api/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mSBxzomZgHIJu9CyVNqyDu/n2JHEtqVgfcCD1Br0cV5iLYogjZOMqhlVLt99PEp+0KGBNUR3GXgeOdN2GR3F9g==",
+      "path": "opentelemetry.api/1.17.0",
+      "hashPath": "opentelemetry.api.1.17.0.nupkg.sha512"
+    },
+    "OpenTelemetry.Api.ProviderBuilderExtensions/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Xgc3Qf9B9TFMFpx6exTdGqMWuYIT2miNzkdMPutVvT9YuMFaEovXWke1Gb6z8NxYaQbbGF38vYLuSg1JCeui5Q==",
+      "path": "opentelemetry.api.providerbuilderextensions/1.17.0",
+      "hashPath": "opentelemetry.api.providerbuilderextensions.1.17.0.nupkg.sha512"
+    },
+    "OpenTelemetry.Exporter.Console/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sSoCa2DMCkw7tQabiVduwKWVyg9ungCiwh+0JuDPODF6CuYvR+OCuJwqcbzJsTMecWQrbgL8OYWAt3GC5tJGhw==",
+      "path": "opentelemetry.exporter.console/1.17.0",
+      "hashPath": "opentelemetry.exporter.console.1.17.0.nupkg.sha512"
+    },
+    "OpenTelemetry.Extensions.Hosting/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t1OwL/4qgboGMobYVT+UV5zgWnFqCp4Pw8lcsmzh8m2K8PQsTKkyxrC32tqYTMYny3GOW4q5cltE3dTVzLmRew==",
+      "path": "opentelemetry.extensions.hosting/1.17.0",
+      "hashPath": "opentelemetry.extensions.hosting.1.17.0.nupkg.sha512"
+    },
+    "OpenTelemetry.Instrumentation.AspNetCore/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rGbmk1vuy1kvgZmE0ps7Vb99YZvDap6AalrrF60FwnNit1uW/PbeFZj1cpb0T8MPkYmjhBrRJ1/JB6QqXkRjHA==",
+      "path": "opentelemetry.instrumentation.aspnetcore/1.17.0",
+      "hashPath": "opentelemetry.instrumentation.aspnetcore.1.17.0.nupkg.sha512"
+    },
+    "OpenTelemetry.Instrumentation.Runtime/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HyYenisDn/xdtyVXdjImsCl+RNC2gq01N0rvSR7tsYAylXR2sxX/YgMsyTajMXA27+r1vB7lNU8cWRhV0fwL+Q==",
+      "path": "opentelemetry.instrumentation.runtime/1.17.0",
+      "hashPath": "opentelemetry.instrumentation.runtime.1.17.0.nupkg.sha512"
+    },
+    "Scalar.AspNetCore/2.16.16": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ax0e0bIh+Upf92k1+pTBUom3e/kbpu20qsrDYmmS1NM721Eq2xF8c789x6IbiNrvW8WwySRzPv/icYYhb6idSg==",
+      "path": "scalar.aspnetcore/2.16.16",
+      "hashPath": "scalar.aspnetcore.2.16.16.nupkg.sha512"
     },
     "Serilog/4.4.0": {
       "type": "package",
@@ -778,37 +977,37 @@
       "path": "system.text.json/10.0.0",
       "hashPath": "system.text.json.10.0.0.nupkg.sha512"
     },
-    "Ahir.Core/1.0.0": {
+    "Ahir.Core/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Ahir.Database/1.0.0": {
+    "Ahir.Database/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Ahir.Plugin/1.0.0": {
+    "Ahir.Plugin/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Ahir.Realtime/1.0.0": {
+    "Ahir.Realtime/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Ahir.Security/1.0.0": {
+    "Ahir.Security/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Ahir.Server/1.0.0": {
+    "Ahir.Server/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Ahir.Storage/1.0.0": {
+    "Ahir.Storage/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

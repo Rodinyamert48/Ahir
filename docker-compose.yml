@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  ahir:
+    build: .
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    volumes:
+      - ahir_data:/app/data
+      - ahir_backups:/app/backups
+      - ahir_logs:/app/logs
+    environment:
+      - AHIR_SERVER_HTTPPORT=8080
+      - AHIR_SERVER_ENABLESSL=false
+      - AHIR_DATABASE_DATAPATH=/app/data
+      - AHIR_SECURITY_JWTSECRET=change-me-to-a-secure-random-secret
+    restart: unless-stopped
+
+volumes:
+  ahir_data:
+  ahir_backups:
+  ahir_logs:

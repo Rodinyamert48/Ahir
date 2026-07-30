@@ -11,10 +11,12 @@ public sealed class AhirCliApp
     private readonly Action _logs;
     private readonly Action _config;
     private readonly Action _doctor;
+    private readonly Func<Task>? _interactive;
 
     public AhirCliApp(
         Func<Task> start, Func<Task> stop, Func<Task> restart, Action status,
-        Func<Task> backup, Func<string, Task> restore, Action logs, Action config, Action doctor)
+        Func<Task> backup, Func<string, Task> restore, Action logs, Action config, Action doctor,
+        Func<Task>? interactive = null)
     {
         _start = start;
         _stop = stop;
@@ -25,6 +27,7 @@ public sealed class AhirCliApp
         _logs = logs;
         _config = config;
         _doctor = doctor;
+        _interactive = interactive;
     }
 
     public async Task<int> RunAsync(string[] args)
@@ -51,6 +54,7 @@ public sealed class AhirCliApp
                 "logs" => ExecuteSync(_logs),
                 "config" => ExecuteSync(_config),
                 "doctor" => ExecuteSync(_doctor),
+                "shell" or "interactive" => await ExecuteInteractiveAsync(),
                 "help" => PrintHelpAndReturn(),
                 _ => PrintHelpAndReturn()
             };
@@ -60,6 +64,13 @@ public sealed class AhirCliApp
             Console.Error.WriteLine($"Error: {ex.Message}");
             return 1;
         }
+    }
+
+    private async Task<int> ExecuteInteractiveAsync()
+    {
+        if (_interactive != null)
+            await _interactive();
+        return 0;
     }
 
     private static async Task<int> ExecuteAsync(Func<Task> action)
@@ -96,6 +107,7 @@ public sealed class AhirCliApp
         Console.WriteLine("  logs      View server logs");
         Console.WriteLine("  config    Manage configuration");
         Console.WriteLine("  doctor    Run system diagnostics");
+        Console.WriteLine("  shell     Start interactive shell mode");
         Console.WriteLine("  help      Show this help");
     }
 }

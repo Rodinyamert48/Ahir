@@ -14,8 +14,9 @@ var storage = new StorageEngine(config.Storage);
 var security = new SecurityProvider(config.Security);
 var realtime = new RealtimeEngine();
 var logger = new ConsoleLogger();
+var pluginEngine = new PluginEngine("plugins", null!);
 
-var host = new AhirServerHost(config, database, storage, security, realtime, new PluginEngine("plugins", null!));
+var host = new AhirServerHost(config, database, storage, security, realtime, pluginEngine);
 
 var app = new AhirCliApp(
     start: () => host.StartAsync(),
@@ -27,40 +28,74 @@ var app = new AhirCliApp(
         Console.WriteLine($"State: {host.State}");
         Console.WriteLine($"Started At: {host.StartedAt}");
         Console.WriteLine($"Uptime: {DateTime.UtcNow - host.StartedAt}");
+        Console.WriteLine($"Database: {database.Name}");
+        Console.WriteLine($"Collections: {database.Info.CollectionCount}");
+        Console.WriteLine($"Plugins: {pluginEngine.GetLoadedPlugins().Count}");
     },
     backup: async () =>
     {
         Console.WriteLine("Creating backup...");
-        var result = await host.Backup.CreateBackupAsync();
-        if (result.Success)
-            Console.WriteLine($"Backup created: {result.Data?.Id}");
-        else
-            Console.WriteLine($"Backup failed: {result.ErrorMessage}");
+        try
+        {
+            var result = await host.Backup.CreateBackupAsync();
+            if (result.Success && result.Data != null)
+                Console.WriteLine($"Backup created: {result.Data.Id} ({result.Data.SizeBytes / 1024 / 1024} MB)");
+            else
+                Console.WriteLine($"Backup failed: {result.ErrorMessage}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Backup failed: {ex.Message}");
+        }
     },
     restore: async (id) =>
     {
         Console.WriteLine($"Restoring from backup {id}...");
-        var result = await host.Backup.RestoreAsync(id);
-        if (result.Success)
-            Console.WriteLine("Restore completed.");
-        else
-            Console.WriteLine($"Restore failed: {result.ErrorMessage}");
+        try
+        {
+            var result = await host.Backup.RestoreAsync(id);
+            if (result.Success)
+                Console.WriteLine("Restore completed.");
+            else
+                Console.WriteLine($"Restore failed: {result.ErrorMessage}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Restore failed: {ex.Message}");
+        }
     },
     logs: () => Console.WriteLine("Use the Dashboard to view logs."),
     config: () => Console.WriteLine("Use the Dashboard or Steps to manage configuration."),
     doctor: () =>
     {
         Console.WriteLine("Running system diagnostics...");
-        var metrics = host.Monitor.GetCurrentMetrics();
-        Console.WriteLine($"CPU: {metrics.CpuUsagePercent}%");
-        Console.WriteLine($"Memory: {metrics.MemoryUsageBytes / 1024 / 1024} MB");
-        Console.WriteLine($"Database Size: {metrics.DatabaseSizeBytes / 1024 / 1024} MB");
-        Console.WriteLine($"Active Connections: {metrics.ActiveConnections}");
-        Console.WriteLine($"Uptime: {TimeSpan.FromSeconds(metrics.UptimeSeconds):g}");
-    }
+        try
+        {
+            var metrics = host.MonitorService.GetCurrentMetrics();
+            Console.WriteLine($"CPU: {metrics.CpuUsagePercent}%");
+            Console.WriteLine($"Memory: {metrics.MemoryUsageBytes / 1024 / 1024} MB");
+            Console.WriteLine($"Database Size: {metrics.DatabaseSizeBytes / 1024 / 1024} MB");
+            Console.WriteLine($"Storage Size: {metrics.StorageSizeBytes / 1024 / 1024} MB");
+            Console.WriteLine($"Active Connections: {metrics.ActiveConnections}");
+            Console.WriteLine($"Active WebSockets: {metrics.ActiveWebSockets}");
+            Console.WriteLine($"Total Requests: {metrics.TotalRequests}");
+            Console.WriteLine($"Uptime: {TimeSpan.FromSeconds(metrics.UptimeSeconds):g}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Diagnostics failed: {ex.Message}");
+        }
+    },
+    interactive: () => RunInteractiveAsync()
 );
 
 return await app.RunAsync(args);
+
+async Task RunInteractiveAsync()
+{
+    var interactive = new InteractiveMode(host);
+    await interactive.RunAsync();
+}
 
 internal sealed class ConsoleLogger : ILogService
 {

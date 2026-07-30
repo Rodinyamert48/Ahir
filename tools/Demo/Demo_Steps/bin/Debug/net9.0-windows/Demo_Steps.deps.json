@@ -6,31 +6,31 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "Demo_Steps/1.0.0": {
+      "Demo_Steps/1.2.0": {
         "dependencies": {
-          "Steps": "1.0.0"
+          "Steps": "1.2.0"
         },
         "runtime": {
           "Demo_Steps.dll": {}
         }
       },
-      "Steps/1.0.0": {
+      "Steps/1.2.0": {
         "runtime": {
           "Steps.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       }
     }
   },
   "libraries": {
-    "Demo_Steps/1.0.0": {
+    "Demo_Steps/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Steps/1.0.0": {
+    "Steps/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

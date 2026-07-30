@@ -37,17 +37,24 @@ Ahır tüm bu yetenekleri **tek bir ikili dosyada** ve **özel gömülü veritab
 
 | Özellik | Açıklama |
 |---------|----------|
-| **Gömülü Veritabanı** | İkili depolama, WAL, LZ4 sıkıştırma ile özel NoSQL motoru |
-| **REST API** | ASP.NET Core Kestrel ile tam CRUD, arama, filtreleme, sayfalama |
-| **Kimlik Doğrulama** | JWT, Argon2id parola hash'leme, API anahtarları, yenileme token'ları |
-| **Yetkilendirme** | Granüler izinlerle rol tabanlı erişim kontrolü |
+| **Gömülü Veritabanı** | İkili depolama, WAL, LZ4 sıkıştırma, AES-256-GCM şifreleme ile özel NoSQL motoru |
+| **REST API** | ASP.NET Core Kestrel ile tam CRUD, arama (12 operatör), filtreleme, sayfalama, aggregate |
+| **Kimlik Doğrulama** | JWT, Argon2id parola hash'leme, API anahtarları, yenileme token'ları, kayıt/giriş |
+| **Yetkilendirme** | JWT middleware ile rol tabanlı erişim kontrolü (admin/editor/viewer) |
 | **Dosya Depolama** | Parçalı yükleme ve tekilleştirme ile yükleme/indirme/stream |
-| **WebSocket** | Gerçek zamanlı olaylar, kanal tabanlı pub/sub, varlık sistemi |
-| **Eklenti Sistemi** | DLL tabanlı, sıcak yüklenebilir, sanal alanlı eklentiler |
-| **CLI** | Tam komut satırı yönetimi (start/stop/backup/restore/doctor) |
-| **Güvenlik** | AES-256-GCM şifreleme, hız sınırlama, IP filtreleme, denetim günlüğü |
-| **İzleme** | Prometheus metrikleri, sağlık kontrolleri, performans sayaçları |
-| **Yedekleme** | Sıkıştırma ve şifreleme ile tam/artımlı yedekleme |
+| **WebSocket** | Gerçek zamanlı olaylar, kanal tabanlı pub/sub, varlık sistemi, token doğrulama |
+| **SSE** | Server-Sent Events ile gerçek zamanlı olay akışı |
+| **Dashboard** | Web bazlı admin paneli (database gezgini, backup yönetimi, metrikler) |
+| **SDK** | C# istemci SDK (NuGet yayınına hazır) |
+| **Eklenti Sistemi** | DLL tabanlı, sıcak yüklenebilir, sanal alanlı eklentiler (örneklerle) |
+| **CLI** | Tam komut satırı yönetimi + interaktif shell modu |
+| **Güvenlik** | AES-256-GCM şifreleme, hız sınırlama, IP filtreleme, JWT auth middleware |
+| **İzleme** | OpenTelemetry, gerçek zamanlı CPU/memory/disk metrikleri, performans sayaçları |
+| **Yedekleme** | Sıkıştırma ve şifreleme ile tam yedekleme/geri yükleme |
+| **Migration** | Schema versioning ile veritabanı migrasyon sistemi |
+| **OpenAPI** | Scalar ile interaktif API dökümantasyonu |
+| **Docker** | Multi-stage Dockerfile + docker-compose desteği |
+| **CI/CD** | GitHub Actions ile build, test, multi-platform publish |
 | **Kurulum** | Windows WPF kurulum sihirbazı (Steps) |
 
 ### Ahır vs Alternatifler
@@ -116,17 +123,24 @@ Ahır eliminates this complexity by providing all these capabilities in a **sing
 
 | Feature | Description |
 |---------|-------------|
-| **Embedded Database** | Custom NoSQL engine with binary storage, WAL, LZ4 compression |
-| **REST API** | ASP.NET Core Kestrel with full CRUD, search, filter, pagination |
-| **Authentication** | JWT, Argon2id password hashing, API keys, refresh tokens |
-| **Authorization** | Role-based access control with granular permissions |
+| **Embedded Database** | Custom NoSQL engine with binary storage, WAL, LZ4 compression, AES-256-GCM encryption |
+| **REST API** | ASP.NET Core Kestrel with full CRUD, search (12 operators), filter, pagination, aggregate |
+| **Authentication** | JWT, Argon2id password hashing, API keys, refresh tokens, register/login |
+| **Authorization** | JWT middleware with role-based access control (admin/editor/viewer) |
 | **File Storage** | Upload/download/stream with chunk upload and deduplication |
-| **WebSocket** | Real-time events, channel-based pub/sub, presence system |
-| **Plugin System** | DLL-based, hot-reloadable, sandboxed plugins |
-| **CLI** | Full command-line management (start/stop/backup/restore/doctor) |
-| **Security** | AES-256-GCM encryption, rate limiting, IP filtering, audit log |
-| **Monitoring** | Prometheus metrics, health checks, performance counters |
-| **Backup** | Full/incremental backup with compression and encryption |
+| **WebSocket** | Real-time events, channel-based pub/sub, presence system, token auth |
+| **SSE** | Server-Sent Events for real-time event streaming |
+| **Dashboard** | Web-based admin panel (DB explorer, backup management, metrics) |
+| **SDK** | C# client SDK (NuGet-ready) |
+| **Plugin System** | DLL-based, hot-reloadable, sandboxed plugins (with samples) |
+| **CLI** | Full command-line management + interactive shell mode |
+| **Security** | AES-256-GCM encryption, rate limiting, IP filtering, JWT auth middleware |
+| **Monitoring** | OpenTelemetry, real-time CPU/memory/disk metrics, perf counters |
+| **Backup** | Full backup/restore with compression and encryption |
+| **Migration** | Schema versioning with migration system |
+| **OpenAPI** | Scalar interactive API documentation |
+| **Docker** | Multi-stage Dockerfile + docker-compose support |
+| **CI/CD** | GitHub Actions build, test, multi-platform release |
 | **Installer** | Windows WPF installer (Steps) with guided setup wizard |
 
 ### Ahır vs Alternatives
@@ -195,17 +209,24 @@ Ahır eliminiert diese Komplexität, indem es alle diese Fähigkeiten in einer *
 
 | Funktion | Beschreibung |
 |----------|-------------|
-| **Eingebettete Datenbank** | Benutzerdefinierte NoSQL-Engine mit Binärspeicher, WAL, LZ4-Komprimierung |
-| **REST-API** | ASP.NET Core Kestrel mit vollständigem CRUD, Suche, Filter, Paginierung |
-| **Authentifizierung** | JWT, Argon2id-Passwort-Hashing, API-Schlüssel, Refresh-Tokens |
-| **Autorisierung** | Rollenbasierte Zugriffskontrolle mit granularen Berechtigungen |
+| **Eingebettete Datenbank** | Benutzerdefinierte NoSQL-Engine mit Binärspeicher, WAL, LZ4-Komprimierung, AES-256-GCM |
+| **REST-API** | ASP.NET Core Kestrel mit vollem CRUD, Suche (12 Operatoren), Filter, Paginierung, Aggregat |
+| **Authentifizierung** | JWT, Argon2id-Passwort-Hashing, API-Schlüssel, Refresh-Tokens, Registrierung/Login |
+| **Autorisierung** | JWT Middleware mit rollenbasierter Zugriffskontrolle (admin/editor/viewer) |
 | **Dateispeicherung** | Hochladen/Herunterladen/Streamen mit Chunk-Upload und Deduplizierung |
-| **WebSocket** | Echtzeit-Ereignisse, kanalbasierter Pub/Sub, Präsenzsystem |
-| **Plugin-System** | DLL-basiert, heiße nachladbar, sandboxed Plugins |
-| **CLI** | Vollständige Befehlszeilenverwaltung (Start/Stopp/Backup/Wiederherstellung/Diagnose) |
-| **Sicherheit** | AES-256-GCM-Verschlüsselung, Ratenbegrenzung, IP-Filterung, Audit-Log |
-| **Überwachung** | Prometheus-Metriken, Health Checks, Leistungsindikatoren |
-| **Backup** | Vollständige/inkrementelle Backups mit Komprimierung und Verschlüsselung |
+| **WebSocket** | Echtzeit-Ereignisse, kanalbasierter Pub/Sub, Präsenzsystem, Token-Auth |
+| **SSE** | Server-Sent Events für Echtzeit-Event-Streaming |
+| **Dashboard** | Webbasiertes Admin-Panel (DB-Explorer, Backup-Verwaltung, Metriken) |
+| **SDK** | C#-Client-SDK (NuGet-bereit) |
+| **Plugin-System** | DLL-basiert, heiße nachladbar, sandboxed Plugins (mit Beispielen) |
+| **CLI** | Vollständige Befehlszeilenverwaltung + interaktiver Shell-Modus |
+| **Sicherheit** | AES-256-GCM-Verschlüsselung, Ratenbegrenzung, IP-Filterung, JWT-Auth-Middleware |
+| **Überwachung** | OpenTelemetry, Echtzeit-CPU/Arbeitsspeicher/Disk-Metriken, Leistungsindikatoren |
+| **Backup** | Vollständige Backups/Wiederherstellung mit Komprimierung und Verschlüsselung |
+| **Migration** | Schema-Versionierung mit Migrationssystem |
+| **OpenAPI** | Scalar interaktive API-Dokumentation |
+| **Docker** | Multi-Stage-Dockerfile + docker-compose-Unterstützung |
+| **CI/CD** | GitHub Actions Build, Test, Multi-Plattform-Release |
 | **Installation** | Windows WPF-Installationsassistent (Steps) |
 
 ### Ahır vs Alternativen
@@ -285,24 +306,101 @@ Ahır eliminiert diese Komplexität, indem es alle diese Fähigkeiten in einer *
 ```
 Ahir.sln
 ├── src/
-│   ├── Ahir.Core/          # Core models, interfaces, utilities, constants
-│   ├── Ahir.Database/      # Embedded NoSQL DB engine
-│   ├── Ahir.Security/      # AES-256-GCM, Argon2id, JWT, RBAC
-│   ├── Ahir.Server/        # Kestrel HTTP server, middleware pipeline
-│   ├── Ahir.Storage/       # File storage, chunk upload, buckets
-│   ├── Ahir.Realtime/      # WebSocket, event bus, channel/presence
-│   ├── Ahir.Plugin/        # DLL plugin system with hot reload
-│   ├── Ahir.CLI/           # CLI (start, stop, status, backup, doctor)
-│   ├── Ahir.Dashboard/     # Web admin panel
-│   ├── Ahir.SDK/           # Client SDK
+│   ├── Ahir.Core/              # Core models, interfaces, utilities, constants
+│   │   └── Services/           # ConfigService, MigrationService
+│   ├── Ahir.Database/          # Embedded NoSQL DB engine
+│   │   ├── Storage/            # Binary file storage (LZ4, AES-256-GCM, WAL)
+│   │   ├── Index/              # In-memory hash-based indexing
+│   │   └── Cache/              # LRU cache + Bloom filter
+│   ├── Ahir.Security/          # AES-256-GCM, Argon2id, JWT, RBAC
+│   ├── Ahir.Server/            # Kestrel HTTP server, middleware pipeline
+│   │   ├── Controllers/        # REST API controllers
+│   │   ├── Middleware/         # Auth, rate limit, IP filter, WebSocket
+│   │   └── Services/           # BackupService, MonitorService
+│   ├── Ahir.Storage/           # File storage, chunk upload, buckets
+│   ├── Ahir.Realtime/          # WebSocket, event bus, channel/presence
+│   ├── Ahir.Plugin/            # DLL plugin system with hot reload
+│   ├── Ahir.Plugin.Samples/    # Sample plugins (Logger, Webhook, Status)
+│   ├── Ahir.CLI/               # CLI + interactive shell
+│   ├── Ahir.Dashboard/         # Web admin panel (HTML/JS dashboard)
+│   ├── Ahir.SDK/               # C# Client SDK
+├── benchmarks/
+│   └── Ahir.Benchmarks/        # BenchmarkDotNet performance tests
 ├── tests/
-│   ├── Ahir.Tests/         # xUnit + BenchmarkDotNet
+│   └── Ahir.Tests/             # 31 xUnit tests
 ├── tools/
-│   ├── Steps/              # WPF installer (real setup)
-│   ├── Demo/Demo_Steps/    # WPF demo (same UI, no install)
+│   ├── Steps/                  # WPF installer (real setup)
+│   └── Demo/Demo_Steps/        # WPF demo (same UI, no install)
+├── .github/workflows/          # GitHub Actions CI/CD
+├── Dockerfile                  # Multi-stage Docker build
+├── docker-compose.yml          # Docker Compose setup
+├── PHASES.md                   # Implementation phases
+└── UPGRADE.md                  # Version upgrade guide
+
+## 🇹🇷 Hızlı Başlangıç
+
+```bash
+# Derleme
+dotnet build
+
+# Sunucuyu başlatma
+dotnet run --project src/Ahir.CLI -- start
+
+# Interaktif shell
+dotnet run --project src/Ahir.CLI -- shell
+
+# API dökümantasyonu (sunucu çalışırken)
+# http://localhost:8080/scalar/v1
+
+# Admin paneli
+dotnet run --project src/Ahir.Dashboard
+
+# Testleri çalıştırma
+dotnet test
+
+# Benchmark çalıştırma
+dotnet run -c Release --project benchmarks/Ahir.Benchmarks
+
+# Windows kurulum sihirbazı
+tools/Steps/bin/Debug/net9.0-windows/Steps.exe
+
+# Demo (kurulum yapmadan önizleme)
+tools/Demo/Demo_Steps/bin/Debug/net9.0-windows/Demo_Steps.exe
+
+# Docker ile çalıştırma
+docker compose up --build
 ```
 
-## Quick Start
+### API Uç Noktaları
+
+| Metot | Yol | Açıklama |
+|--------|------|----------|
+| POST | `/api/v1/auth/register` | Kullanıcı kaydı |
+| POST | `/api/v1/auth/login` | Giriş (JWT döner) |
+| GET | `/api/v1/databases` | Veritabanlarını listele |
+| POST | `/api/v1/databases` | Veritabanı oluştur |
+| GET | `/api/v1/databases/{name}` | Veritabanı bilgisi |
+| DELETE | `/api/v1/databases/{name}` | Veritabanını sil |
+| POST | `/api/v1/databases/{db}/collections` | Koleksiyon oluştur |
+| GET | `/api/v1/databases/{db}/collections` | Koleksiyonları listele |
+| POST | `/api/v1/databases/{db}/collections/{col}/records` | Kayıt ekle |
+| GET | `/api/v1/databases/{db}/collections/{col}/records/{id}` | Kayıt getir |
+| PUT | `/api/v1/databases/{db}/collections/{col}/records/{id}` | Kayıt güncelle |
+| DELETE | `/api/v1/databases/{db}/collections/{col}/records/{id}` | Kayıt sil |
+| POST | `/api/v1/databases/{db}/collections/{col}/records/query` | Kayıt sorgula |
+| POST | `/api/v1/databases/{db}/collections/{col}/records/aggregate` | Aggregate sorgu |
+| GET | `/api/v1/databases/{db}/collections/{col}/count` | Kayıt sayısı |
+| POST | `/api/v1/databases/{db}/collections/{col}/indexes` | İndeks oluştur |
+| GET | `/ws?channel=X` | WebSocket bağlantısı |
+| GET | `/api/v1/events/stream?channel=X` | SSE akışı |
+| GET | `/api/v1/backup` | Yedekleri listele |
+| POST | `/api/v1/backup` | Yedek oluştur |
+| GET | `/api/v1/metrics` | Sistem metrikleri |
+| GET | `/scalar/v1` | API dökümantasyonu |
+
+---
+
+## 🇬🇧 Quick Start
 
 ```bash
 # Build
@@ -311,13 +409,121 @@ dotnet build
 # Start server via CLI
 dotnet run --project src/Ahir.CLI -- start
 
+# Interactive shell
+dotnet run --project src/Ahir.CLI -- shell
+
+# API docs (while server is running)
+# Open http://localhost:8080/scalar/v1
+
+# Admin dashboard
+dotnet run --project src/Ahir.Dashboard
+
+# Run tests
+dotnet test
+
+# Run benchmarks
+dotnet run -c Release --project benchmarks/Ahir.Benchmarks
+
 # Run installer (Windows)
 tools/Steps/bin/Debug/net9.0-windows/Steps.exe
 
 # Run demo (preview installer without installing)
 tools/Demo/Demo_Steps/bin/Debug/net9.0-windows/Demo_Steps.exe
+
+# Docker
+docker compose up --build
 ```
 
-## License
+### API Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| POST | `/api/v1/auth/register` | Register a new user |
+| POST | `/api/v1/auth/login` | Login (returns JWT) |
+| GET | `/api/v1/databases` | List databases |
+| POST | `/api/v1/databases` | Create database |
+| GET | `/api/v1/databases/{name}` | Get database info |
+| DELETE | `/api/v1/databases/{name}` | Drop database |
+| POST | `/api/v1/databases/{db}/collections` | Create collection |
+| GET | `/api/v1/databases/{db}/collections` | List collections |
+| POST | `/api/v1/databases/{db}/collections/{col}/records` | Insert record |
+| GET | `/api/v1/databases/{db}/collections/{col}/records/{id}` | Get record |
+| PUT | `/api/v1/databases/{db}/collections/{col}/records/{id}` | Update record |
+| DELETE | `/api/v1/databases/{db}/collections/{col}/records/{id}` | Delete record |
+| POST | `/api/v1/databases/{db}/collections/{col}/records/query` | Query records |
+| POST | `/api/v1/databases/{db}/collections/{col}/records/aggregate` | Aggregate records |
+| GET | `/api/v1/databases/{db}/collections/{col}/count` | Count records |
+| POST | `/api/v1/databases/{db}/collections/{col}/indexes` | Create index |
+| GET | `/ws?channel=X` | WebSocket connection |
+| GET | `/api/v1/events/stream?channel=X` | SSE stream |
+| GET | `/api/v1/backup` | List backups |
+| POST | `/api/v1/backup` | Create backup |
+| GET | `/api/v1/metrics` | System metrics |
+| GET | `/scalar/v1` | API documentation |
+
+---
+
+## 🇩🇪 Kurzanleitung
+
+```bash
+# Build
+dotnet build
+
+# Server starten
+dotnet run --project src/Ahir.CLI -- start
+
+# Interaktive Shell
+dotnet run --project src/Ahir.CLI -- shell
+
+# API-Dokumentation (während Server läuft)
+# http://localhost:8080/scalar/v1
+
+# Admin-Dashboard
+dotnet run --project src/Ahir.Dashboard
+
+# Tests ausführen
+dotnet test
+
+# Benchmarks ausführen
+dotnet run -c Release --project benchmarks/Ahir.Benchmarks
+
+# Installationsassistent (Windows)
+tools/Steps/bin/Debug/net9.0-windows/Steps.exe
+
+# Demo (Vorschau ohne Installation)
+tools/Demo/Demo_Steps/bin/Debug/net9.0-windows/Demo_Steps.exe
+
+# Docker
+docker compose up --build
+```
+
+### API-Endpunkte
+
+| Methode | Pfad | Beschreibung |
+|---------|------|-------------|
+| POST | `/api/v1/auth/register` | Benutzer registrieren |
+| POST | `/api/v1/auth/login` | Anmelden (JWT) |
+| GET | `/api/v1/databases` | Datenbanken auflisten |
+| POST | `/api/v1/databases` | Datenbank erstellen |
+| GET | `/api/v1/databases/{name}` | Datenbankinfo abrufen |
+| DELETE | `/api/v1/databases/{name}` | Datenbank löschen |
+| POST | `/api/v1/databases/{db}/collections` | Sammlung erstellen |
+| GET | `/api/v1/databases/{db}/collections` | Sammlungen auflisten |
+| POST | `/api/v1/databases/{db}/collections/{col}/records` | Datensatz einfügen |
+| GET | `/api/v1/databases/{db}/collections/{col}/records/{id}` | Datensatz abrufen |
+| PUT | `/api/v1/databases/{db}/collections/{col}/records/{id}` | Datensatz aktualisieren |
+| DELETE | `/api/v1/databases/{db}/collections/{col}/records/{id}` | Datensatz löschen |
+| POST | `/api/v1/databases/{db}/collections/{col}/records/query` | Datensätze abfragen |
+| POST | `/api/v1/databases/{db}/collections/{col}/records/aggregate` | Aggregatabfrage |
+| GET | `/api/v1/databases/{db}/collections/{col}/count` | Datensätze zählen |
+| POST | `/api/v1/databases/{db}/collections/{col}/indexes` | Index erstellen |
+| GET | `/ws?channel=X` | WebSocket-Verbindung |
+| GET | `/api/v1/events/stream?channel=X` | SSE-Stream |
+| GET | `/api/v1/backup` | Backups auflisten |
+| POST | `/api/v1/backup` | Backup erstellen |
+| GET | `/api/v1/metrics` | Systemmetriken |
+| GET | `/scalar/v1` | API-Dokumentation |
+
+## License | Lisans | Lizenz
 
 MIT License — see [LICENSE](LICENSE) for details.

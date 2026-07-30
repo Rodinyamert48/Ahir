@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj": {
-      "version": "1.0.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj",
         "projectName": "Ahir.Core",
@@ -72,7 +72,7 @@
       }
     },
     "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Database\\Ahir.Database.csproj": {
-      "version": "1.0.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Database\\Ahir.Database.csproj",
         "projectName": "Ahir.Database",
@@ -143,7 +143,7 @@
       }
     },
     "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Plugin\\Ahir.Plugin.csproj": {
-      "version": "1.0.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Plugin\\Ahir.Plugin.csproj",
         "projectName": "Ahir.Plugin",
@@ -208,7 +208,7 @@
       }
     },
     "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\Ahir.Realtime.csproj": {
-      "version": "1.0.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\Ahir.Realtime.csproj",
         "projectName": "Ahir.Realtime",
@@ -273,7 +273,7 @@
       }
     },
     "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Security\\Ahir.Security.csproj": {
-      "version": "1.0.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Security\\Ahir.Security.csproj",
         "projectName": "Ahir.Security",
@@ -348,7 +348,7 @@
       }
     },
     "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Server\\Ahir.Server.csproj": {
-      "version": "1.0.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Server\\Ahir.Server.csproj",
         "projectName": "Ahir.Server",
@@ -408,6 +408,26 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "OpenTelemetry.Exporter.Console": {
+              "target": "Package",
+              "version": "[1.17.0, )"
+            },
+            "OpenTelemetry.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[1.17.0, )"
+            },
+            "OpenTelemetry.Instrumentation.AspNetCore": {
+              "target": "Package",
+              "version": "[1.17.0, )"
+            },
+            "OpenTelemetry.Instrumentation.Runtime": {
+              "target": "Package",
+              "version": "[1.17.0, )"
+            },
+            "Scalar.AspNetCore": {
+              "target": "Package",
+              "version": "[2.16.16, )"
+            },
             "Serilog": {
               "target": "Package",
               "version": "[4.4.0, )"
@@ -441,7 +461,7 @@
       }
     },
     "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Storage\\Ahir.Storage.csproj": {
-      "version": "1.0.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Storage\\Ahir.Storage.csproj",
         "projectName": "Ahir.Storage",

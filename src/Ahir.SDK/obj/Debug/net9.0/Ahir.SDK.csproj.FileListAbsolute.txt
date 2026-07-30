@@ -13,3 +13,4 @@ C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\refint\Ahir.SDK.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.pdb
 C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\ref\Ahir.SDK.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.SDK\obj\Debug\net9.0\Ahir.SDK.sourcelink.json

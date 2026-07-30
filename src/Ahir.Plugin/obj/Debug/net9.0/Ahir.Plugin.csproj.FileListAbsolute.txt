@@ -13,3 +13,4 @@ C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plugin.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\refint\Ahir.Plugin.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plugin.pdb
 C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\ref\Ahir.Plugin.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Plugin\obj\Debug\net9.0\Ahir.Plugin.sourcelink.json

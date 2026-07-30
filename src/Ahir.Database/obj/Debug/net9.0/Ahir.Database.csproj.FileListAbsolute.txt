@@ -13,3 +13,4 @@ C:\Users\merte\Desktop\Ahır\src\Ahir.Database\obj\Debug\net9.0\Ahir.Database.dl
 C:\Users\merte\Desktop\Ahır\src\Ahir.Database\obj\Debug\net9.0\refint\Ahir.Database.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Database\obj\Debug\net9.0\Ahir.Database.pdb
 C:\Users\merte\Desktop\Ahır\src\Ahir.Database\obj\Debug\net9.0\ref\Ahir.Database.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Database\obj\Debug\net9.0\Ahir.Database.sourcelink.json

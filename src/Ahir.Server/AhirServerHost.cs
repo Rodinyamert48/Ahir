@@ -1,10 +1,14 @@
 using Ahir.Core.Configuration;
 using Ahir.Core.Interfaces;
 using Ahir.Core.Models;
+using Ahir.Server.Controllers;
 using Ahir.Server.Middleware;
+using Ahir.Server.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OpenTelemetry.Metrics;
+using Scalar.AspNetCore;
 using Serilog;
 
 namespace Ahir.Server;
@@ -24,8 +28,9 @@ public sealed class AhirServerHost : IServerHost
     public ISecurityProvider Security { get; }
     public IRealtimeEngine Realtime { get; }
     public IPluginEngine Plugin { get; }
-    public IBackupService Backup { get; } = null!;
-    public IMonitorService Monitor { get; } = null!;
+    public IBackupService Backup { get; }
+    public IMonitorService Monitor { get; }
+    public MonitorService MonitorService { get; }
 
     public AhirServerHost(AhirConfig config, IDatabaseEngine database, IStorageEngine storage,
         ISecurityProvider security, IRealtimeEngine realtime, IPluginEngine plugin)
@@ -36,6 +41,9 @@ public sealed class AhirServerHost : IServerHost
         Security = security;
         Realtime = realtime;
         Plugin = plugin;
+        MonitorService = new MonitorService(this);
+        Monitor = MonitorService;
+        Backup = new BackupService(config, database);
 
         var urls = new List<string>
         {
@@ -68,7 +76,11 @@ public sealed class AhirServerHost : IServerHost
         builder.Services.AddSingleton(Realtime);
         builder.Services.AddSingleton(Plugin);
         builder.Services.AddSingleton<IServerHost>(this);
+        builder.Services.AddSingleton(MonitorService);
+        builder.Services.AddSingleton<IBackupService>(Backup);
+        builder.Services.AddSingleton<IMonitorService>(Monitor);
 
+        builder.Services.AddControllers();
         builder.Services.AddCors(options =>
         {
             options.AddDefaultPolicy(policy =>
@@ -81,9 +93,21 @@ public sealed class AhirServerHost : IServerHost
             });
         });
 
+        builder.Services.AddOpenTelemetry()
+            .WithMetrics(metrics => metrics
+                .AddAspNetCoreInstrumentation()
+                .AddRuntimeInstrumentation()
+                .AddMeter("Ahir.Server")
+                .AddConsoleExporter());
+
         builder.Host.UseSerilog();
 
         _app = builder.Build();
+
+        _app.UseWebSockets(new WebSocketOptions
+        {
+            KeepAliveInterval = _config.Realtime.HeartbeatInterval
+        });
 
         _app.UseMiddleware<IpFilterMiddleware>();
         _app.UseMiddleware<SecurityHeadersMiddleware>();
@@ -91,14 +115,37 @@ public sealed class AhirServerHost : IServerHost
         if (_config.Server.EnableRateLimiting)
             _app.UseMiddleware<RateLimiterMiddleware>();
 
+        _app.UseMiddleware<AuthMiddleware>();
+
+        _app.Use(async (context, next) =>
+        {
+            if (context.Request.Path.StartsWithSegments("/ws"))
+            {
+                var handler = new WebSocketHandler(
+                    _ => next(),
+                    Realtime,
+                    this,
+                    MonitorService);
+                await handler.InvokeAsync(context);
+            }
+            else
+            {
+                await next();
+            }
+        });
+
+        _app.MapScalarApiReference();
         _app.UseCors();
-        _app.MapGet("/health", () => Results.Ok(new { status = "healthy", instance = InstanceId, uptime = DateTime.UtcNow - StartedAt }));
-        _app.MapGet("/metrics", () => Results.Ok(Monitor?.GetCurrentMetrics()));
+        _app.MapControllers();
 
         StartedAt = DateTime.UtcNow;
         State = ServerState.Running;
 
         Log.Information("Ahir Server started successfully");
+
+        if (Plugin.GetLoadedPlugins().Count > 0)
+            Log.Information("Loaded {Count} plugin(s)", Plugin.GetLoadedPlugins().Count);
+
         await _app.StartAsync(cancellationToken);
         await _app.WaitForShutdownAsync(cancellationToken);
     }
@@ -132,7 +179,6 @@ public static class AhirServerExtensions
 {
     public static IServiceCollection AddAhirServer(this IServiceCollection services, AhirConfig config)
     {
-        // Service registration will be done via the host
         return services;
     }
 }

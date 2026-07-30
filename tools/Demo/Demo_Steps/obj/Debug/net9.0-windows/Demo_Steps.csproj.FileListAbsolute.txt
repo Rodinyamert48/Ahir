@@ -21,3 +21,4 @@ C:\Users\merte\Desktop\Ahır\tools\Demo\Demo_Steps\obj\Debug\net9.0-windows\refi
 C:\Users\merte\Desktop\Ahır\tools\Demo\Demo_Steps\obj\Debug\net9.0-windows\Demo_Steps.pdb
 C:\Users\merte\Desktop\Ahır\tools\Demo\Demo_Steps\obj\Debug\net9.0-windows\Demo_Steps.genruntimeconfig.cache
 C:\Users\merte\Desktop\Ahır\tools\Demo\Demo_Steps\obj\Debug\net9.0-windows\ref\Demo_Steps.dll
+C:\Users\merte\Desktop\Ahır\tools\Demo\Demo_Steps\obj\Debug\net9.0-windows\Demo_Steps.sourcelink.json

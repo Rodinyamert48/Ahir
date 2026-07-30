@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using K4os.Compression.LZ4;
 using Ahir.Core.Configuration;
 using Ahir.Core.Utilities;
@@ -13,6 +14,7 @@ internal sealed class StorageEngine : IDisposable
     private FileStream? _walFile;
     private long _nextPosition;
     private bool _disposed;
+    private AesGcm? _aes;
 
     public StorageEngine(string basePath, DatabaseConfig config)
     {
@@ -31,21 +33,45 @@ internal sealed class StorageEngine : IDisposable
 
         _nextPosition = _dataFile.Length;
         await RecoverAsync(cancellationToken);
+
+        if (_config.EnableEncryption && !string.IsNullOrEmpty(_config.EncryptionKey))
+        {
+            var key = Convert.FromHexString(_config.EncryptionKey);
+            if (key.Length < 32) key = key.Concat(new byte[32 - key.Length]).ToArray();
+            if (key.Length > 32) key = key[..32];
+            _aes = new AesGcm(key, 16);
+        }
     }
 
     public async Task<long> WriteAsync(byte[] data, CompressionType compression = CompressionType.LZ4, CancellationToken cancellationToken = default)
     {
-        var compressed = _config.EnableCompression && compression != CompressionType.None
+        var processed = _config.EnableCompression && compression != CompressionType.None
             ? Compress(data)
             : data;
 
+        byte encryptionType = 0;
+        if (_aes != null)
+        {
+            var nonce = RandomNumberGenerator.GetBytes(12);
+            var tag = new byte[16];
+            var ciphertext = new byte[processed.Length];
+            _aes.Encrypt(nonce, processed, ciphertext, tag);
+            var encrypted = new byte[12 + 16 + ciphertext.Length];
+            nonce.CopyTo(encrypted, 0);
+            tag.CopyTo(encrypted, 12);
+            ciphertext.CopyTo(encrypted, 28);
+            processed = encrypted;
+            encryptionType = 1;
+        }
+
         var header = new RecordHeader
         {
-            Length = compressed.Length + RecordHeader.Size,
-            DataLength = compressed.Length,
+            Length = processed.Length + RecordHeader.Size,
+            DataLength = processed.Length,
             Timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),
-            Checksum = ComputeCrc32(compressed),
+            Checksum = ComputeCrc32(processed),
             CompressionType = (byte)compression,
+            EncryptionType = encryptionType,
             Position = _nextPosition
         };
 
@@ -53,12 +79,12 @@ internal sealed class StorageEngine : IDisposable
         {
             _dataFile!.Seek(_nextPosition, SeekOrigin.Begin);
             WriteHeader(_dataFile, header);
-            _dataFile.Write(compressed, 0, compressed.Length);
+            _dataFile.Write(processed, 0, processed.Length);
             _dataFile.Flush(true);
 
             _walFile!.Seek(0, SeekOrigin.End);
             WriteHeader(_walFile, header);
-            _walFile.Write(compressed, 0, compressed.Length);
+            _walFile.Write(processed, 0, processed.Length);
             _walFile.Flush(true);
 
             var position = _nextPosition;
@@ -67,7 +93,7 @@ internal sealed class StorageEngine : IDisposable
         }
     }
 
-    public async Task<byte[]?> ReadAsync(long position, CancellationToken cancellationToken = default)
+    public async Task<(byte[]? Data, RecordHeader Header)?> ReadWithHeaderAsync(long position, CancellationToken cancellationToken = default)
     {
         lock (_lock)
         {
@@ -80,11 +106,22 @@ internal sealed class StorageEngine : IDisposable
             if ((header.Flags & (byte)RecordFlag.Deleted) != 0)
                 return null;
 
-            var data = new byte[header.DataLength];
-            _dataFile.Read(data, 0, data.Length);
+            var raw = new byte[header.DataLength];
+            _dataFile.Read(raw, 0, raw.Length);
 
-            return header.CompressionType != 0 ? Decompress(data) : data;
+            var decrypted = header.EncryptionType != 0 && _aes != null
+                ? DecryptBytes(raw)
+                : raw;
+
+            var decompressed = header.CompressionType != 0 ? Decompress(decrypted) : decrypted;
+            return (decompressed, header);
         }
+    }
+
+    public async Task<byte[]?> ReadAsync(long position, CancellationToken cancellationToken = default)
+    {
+        var result = await ReadWithHeaderAsync(position, cancellationToken);
+        return result?.Data;
     }
 
     public async Task<bool> DeleteAsync(long position)
@@ -98,6 +135,18 @@ internal sealed class StorageEngine : IDisposable
             _dataFile.WriteByte((byte)RecordFlag.Deleted);
             _dataFile.Flush(true);
             return true;
+        }
+    }
+
+    public async Task<RecordHeader?> ReadHeaderAsync(long position)
+    {
+        lock (_lock)
+        {
+            if (position >= _dataFile!.Length)
+                return null;
+
+            _dataFile.Seek(position, SeekOrigin.Begin);
+            return ReadHeaderFromStream(_dataFile);
         }
     }
 
@@ -140,6 +189,19 @@ internal sealed class StorageEngine : IDisposable
 
             compactFile.Flush(true);
         }
+    }
+
+    private byte[] DecryptBytes(byte[] encrypted)
+    {
+        if (_aes == null) return encrypted;
+        if (encrypted.Length < 28) return encrypted;
+
+        var nonce = encrypted[..12];
+        var tag = encrypted[12..28];
+        var ciphertext = encrypted[28..];
+        var plaintext = new byte[ciphertext.Length];
+        _aes.Decrypt(nonce, ciphertext, tag, plaintext);
+        return plaintext;
     }
 
     private async Task RecoverAsync(CancellationToken cancellationToken)
@@ -233,5 +295,6 @@ internal sealed class StorageEngine : IDisposable
         _disposed = true;
         _dataFile?.Dispose();
         _walFile?.Dispose();
+        _aes?.Dispose();
     }
 }

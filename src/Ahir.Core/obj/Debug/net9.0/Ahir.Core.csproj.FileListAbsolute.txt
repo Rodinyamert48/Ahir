@@ -10,3 +10,4 @@ C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\Ahir.Core.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\refint\Ahir.Core.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\Ahir.Core.pdb
 C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\ref\Ahir.Core.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Core\obj\Debug\net9.0\Ahir.Core.sourcelink.json

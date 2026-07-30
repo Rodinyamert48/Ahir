@@ -13,3 +13,4 @@ C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Storage.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\refint\Ahir.Storage.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Storage.pdb
 C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\ref\Ahir.Storage.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Storage\obj\Debug\net9.0\Ahir.Storage.sourcelink.json

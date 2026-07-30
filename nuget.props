@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <Authors>Ahir Technologies</Authors>
+    <Company>Ahir Technologies</Company>
+    <Product>Ahir</Product>
+    <Description>Next-generation backend platform with embedded database engine</Description>
+    <PackageProjectUrl>https://github.com/ahir/ahir</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ahir/ahir</RepositoryUrl>
+    <PackageTags>backend;database;nosql;embedded;server;api;websocket</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>1.2.0</Version>
+    <FileVersion>1.2.0.0</FileVersion>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+  </PropertyGroup>
+</Project>

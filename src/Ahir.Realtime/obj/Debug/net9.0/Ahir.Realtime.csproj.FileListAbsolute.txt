@@ -13,3 +13,4 @@ C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Realtime.dl
 C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\refint\Ahir.Realtime.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Realtime.pdb
 C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\ref\Ahir.Realtime.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Realtime\obj\Debug\net9.0\Ahir.Realtime.sourcelink.json

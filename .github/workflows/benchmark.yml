@@ -1,0 +1,17 @@
+name: Benchmarks
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 0"  # Every Sunday
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.0.x"
+      - name: Run Benchmarks
+        run: dotnet run -c Release --project benchmarks/Ahir.Benchmarks/Ahir.Benchmarks.csproj

@@ -1,0 +1,42 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+packages/
+*.nupkg
+
+# Build
+**/bin/**
+**/obj/**
+*.dll
+*.exe
+*.pdb
+*.deps.json
+*.runtimeconfig.json
+*.runtimeconfig.dev.json
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Data
+data/
+backups/
+
+# Temp
+temp/

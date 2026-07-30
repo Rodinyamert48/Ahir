@@ -18,7 +18,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Ahir.Core/1.0.0": {
+      "Ahir.Core/1.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
@@ -63,7 +63,7 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Ahir.Core/1.0.0": {
+    "Ahir.Core/1.2.0": {
       "type": "project",
       "path": "../Ahir.Core/Ahir.Core.csproj",
       "msbuildProject": "../Ahir.Core/Ahir.Core.csproj"
@@ -71,14 +71,14 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Ahir.Core >= 1.0.0"
+      "Ahir.Core >= 1.2.0"
     ]
   },
   "packageFolders": {
     "C:\\Users\\merte\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.2.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.SDK\\Ahir.SDK.csproj",
       "projectName": "Ahir.SDK",

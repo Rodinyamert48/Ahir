@@ -17,3 +17,4 @@ C:\Users\merte\Desktop\Ahır\tools\Steps\obj\Debug\net9.0-windows\refint\Steps.d
 C:\Users\merte\Desktop\Ahır\tools\Steps\obj\Debug\net9.0-windows\Steps.pdb
 C:\Users\merte\Desktop\Ahır\tools\Steps\obj\Debug\net9.0-windows\Steps.genruntimeconfig.cache
 C:\Users\merte\Desktop\Ahır\tools\Steps\obj\Debug\net9.0-windows\ref\Steps.dll
+C:\Users\merte\Desktop\Ahır\tools\Steps\obj\Debug\net9.0-windows\Steps.sourcelink.json

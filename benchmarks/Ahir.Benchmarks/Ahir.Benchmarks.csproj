@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.15.8" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Ahir.Database\Ahir.Database.csproj" />
+    <ProjectReference Include="..\..\src\Ahir.Security\Ahir.Security.csproj" />
+    <ProjectReference Include="..\..\src\Ahir.Core\Ahir.Core.csproj" />
+  </ItemGroup>
+</Project>

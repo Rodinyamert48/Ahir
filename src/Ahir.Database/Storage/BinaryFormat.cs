@@ -45,6 +45,7 @@ public sealed class RecordHeader
     public uint Checksum { get; set; }
     public byte Flags { get; set; }
     public byte CompressionType { get; set; }
+    public byte EncryptionType { get; set; }
 }
 
 public enum CompressionType : byte

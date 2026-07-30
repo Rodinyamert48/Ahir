@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahir Dashboard</title>
+    <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+    <div id="app">
+        <div id="login-screen" class="screen">
+            <div class="login-card">
+                <h1>Ahir</h1>
+                <p class="subtitle">Admin Dashboard</p>
+                <input type="text" id="login-username" placeholder="Username" />
+                <input type="password" id="login-password" placeholder="Password" />
+                <button onclick="login()">Sign In</button>
+                <p id="login-error" class="error"></p>
+            </div>
+        </div>
+        <div id="main-screen" class="screen hidden">
+            <nav><h2>Ahir</h2><div class="nav-links"><a onclick="showPage('overview')">Overview</a><a onclick="showPage('databases')">Databases</a><a onclick="showPage('backups')">Backups</a></div><button onclick="logout()">Logout</button></nav>
+            <main>
+                <div id="page-overview" class="page">
+                    <h1>System Overview</h1>
+                    <div id="system-info" class="stats-grid"></div>
+                    <h2>Metrics</h2>
+                    <div id="metrics-display" class="stats-grid"></div>
+                </div>
+                <div id="page-databases" class="page hidden">
+                    <h1>Databases</h1>
+                    <div id="database-list"></div>
+                    <div id="collection-view" class="hidden"><h2 id="collection-title"></h2><div id="records-display"></div></div>
+                </div>
+                <div id="page-backups" class="page hidden">
+                    <h1>Backups <button onclick="createBackup()" class="btn-sm">New Backup</button></h1>
+                    <div id="backup-list"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>

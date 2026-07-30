@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj": {
-      "version": "1.0.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Core\\Ahir.Core.csproj",
         "projectName": "Ahir.Core",
@@ -72,7 +72,7 @@
       }
     },
     "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\Ahir.Realtime.csproj": {
-      "version": "1.0.0",
+      "version": "1.2.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\src\\Ahir.Realtime\\Ahir.Realtime.csproj",
         "projectName": "Ahir.Realtime",

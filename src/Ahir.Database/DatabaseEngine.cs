@@ -247,7 +247,34 @@ public sealed class DatabaseEngine : IDatabaseEngine, ICollectionEngine, IDispos
     public async Task<AhirResult<bool>> DeleteAsync(string database, string collection, string id, CancellationToken cancellationToken = default)
     {
         if (_storageEngines.TryGetValue(database, out var storage))
-            await storage.DeleteAsync(0);
+        {
+            var length = await storage.GetLengthAsync();
+            long position = 0;
+            while (position < length)
+            {
+                var header = await storage.ReadHeaderAsync(position);
+                if (header == null) break;
+
+                if ((header.Flags & (byte)RecordFlag.Deleted) == 0)
+                {
+                    var data = await storage.ReadAsync(position, cancellationToken);
+                    if (data != null)
+                    {
+                        try
+                        {
+                            var record = JsonSerializer.Deserialize<AhirRecord>(data);
+                            if (record != null && record.Id == id && record.Collection == collection)
+                            {
+                                await storage.DeleteAsync(position);
+                                break;
+                            }
+                        }
+                        catch { }
+                    }
+                }
+                position += header.Length;
+            }
+        }
 
         _cache.Remove(id);
         _indexEngine.ClearCollection(collection);
@@ -282,14 +309,123 @@ public sealed class DatabaseEngine : IDatabaseEngine, ICollectionEngine, IDispos
 
     public async Task<AhirResult<PageResult<AhirRecord>>> QueryAsync(string database, string collection, QueryOptions options, CancellationToken cancellationToken = default)
     {
+        if (!_storageEngines.TryGetValue(database, out var storage))
+            return AhirResult<PageResult<AhirRecord>>.Fail("NOT_FOUND", $"Database '{database}' not open.");
+
         var allRecords = new List<AhirRecord>();
+        var length = await storage.GetLengthAsync();
+        long position = 0;
+
+        while (position < length)
+        {
+            var header = await storage.ReadHeaderAsync(position);
+            if (header == null) break;
+
+            if ((header.Flags & (byte)RecordFlag.Deleted) == 0)
+            {
+                var data = await storage.ReadAsync(position, cancellationToken);
+                if (data != null)
+                {
+                    try
+                    {
+                        var record = JsonSerializer.Deserialize<AhirRecord>(data);
+                        if (record != null && record.Collection == collection)
+                            allRecords.Add(record);
+                    }
+                    catch { }
+                }
+            }
+            position += header.Length;
+        }
+
+        var filtered = ApplyFilters(allRecords, options.Filters);
+        var sorted = ApplySorting(filtered, options.Sort);
+        var totalCount = sorted.Count;
+
+        int offset;
+        if (options.Offset.HasValue)
+        {
+            offset = options.Offset.Value;
+        }
+        else
+        {
+            offset = (options.Page - 1) * options.PageSize;
+        }
+
+        var paged = sorted
+            .Skip(offset)
+            .Take(options.Limit ?? options.PageSize)
+            .ToList() as IReadOnlyList<AhirRecord>;
+
         return AhirResult<PageResult<AhirRecord>>.Ok(new PageResult<AhirRecord>
         {
-            Items = allRecords,
-            TotalCount = allRecords.Count,
+            Items = paged ?? Array.Empty<AhirRecord>(),
+            TotalCount = totalCount,
             Page = options.Page,
             PageSize = options.PageSize
         });
+    }
+
+    private static List<AhirRecord> ApplyFilters(List<AhirRecord> records, IReadOnlyList<QueryFilter>? filters)
+    {
+        if (filters == null || filters.Count == 0) return records;
+
+        return records.Where(record =>
+        {
+            return filters.All(filter =>
+            {
+                if (!record.Fields.TryGetValue(filter.Field, out var fieldValue))
+                    return filter.Operator == FilterOperator.NotEquals || filter.Operator == FilterOperator.NotIn;
+
+                return filter.Operator switch
+                {
+                    FilterOperator.Equals => CompareValues(fieldValue, filter.Value) == 0,
+                    FilterOperator.NotEquals => CompareValues(fieldValue, filter.Value) != 0,
+                    FilterOperator.GreaterThan => CompareValues(fieldValue, filter.Value) > 0,
+                    FilterOperator.GreaterThanOrEqual => CompareValues(fieldValue, filter.Value) >= 0,
+                    FilterOperator.LessThan => CompareValues(fieldValue, filter.Value) < 0,
+                    FilterOperator.LessThanOrEqual => CompareValues(fieldValue, filter.Value) <= 0,
+                    FilterOperator.Contains => fieldValue?.ToString()?.Contains(filter.Value?.ToString() ?? "", StringComparison.OrdinalIgnoreCase) ?? false,
+                    FilterOperator.StartsWith => fieldValue?.ToString()?.StartsWith(filter.Value?.ToString() ?? "", StringComparison.OrdinalIgnoreCase) ?? false,
+                    FilterOperator.EndsWith => fieldValue?.ToString()?.EndsWith(filter.Value?.ToString() ?? "", StringComparison.OrdinalIgnoreCase) ?? false,
+                    FilterOperator.In => filter.Value is IReadOnlyList<object> list && list.Any(v => CompareValues(fieldValue, v) == 0),
+                    FilterOperator.NotIn => filter.Value is IReadOnlyList<object> notInList && notInList.All(v => CompareValues(fieldValue, v) != 0),
+                    FilterOperator.Between => filter.Value is IReadOnlyList<object> range && range.Count >= 2 &&
+                                               CompareValues(fieldValue, range[0]) >= 0 && CompareValues(fieldValue, range[1]) <= 0,
+                    _ => true
+                };
+            });
+        }).ToList();
+    }
+
+    private static List<AhirRecord> ApplySorting(List<AhirRecord> records, IReadOnlyList<SortOption>? sort)
+    {
+        if (sort == null || sort.Count == 0) return records;
+
+        var sorted = records;
+        foreach (var option in sort.Reverse())
+        {
+            if (option.Descending)
+                sorted = [.. sorted.OrderByDescending(r => r.Fields.TryGetValue(option.Field, out var val) ? val : null)];
+            else
+                sorted = [.. sorted.OrderBy(r => r.Fields.TryGetValue(option.Field, out var val) ? val : null)];
+        }
+        return sorted;
+    }
+
+    private static int CompareValues(object? a, object? b)
+    {
+        if (a == null && b == null) return 0;
+        if (a == null) return -1;
+        if (b == null) return 1;
+
+        if (a is IComparable comparableA && b is IComparable comparableB)
+        {
+            try { return comparableA.CompareTo(comparableB); }
+            catch { return string.Compare(a.ToString(), b.ToString(), StringComparison.OrdinalIgnoreCase); }
+        }
+
+        return string.Compare(a.ToString(), b.ToString(), StringComparison.OrdinalIgnoreCase);
     }
 
     public Task<AhirResult<long>> CountAsync(string database, string collection, IReadOnlyList<QueryFilter>? filters = null, CancellationToken cancellationToken = default)
@@ -317,22 +453,30 @@ public sealed class DatabaseEngine : IDatabaseEngine, ICollectionEngine, IDispos
             return null;
 
         var length = await storage.GetLengthAsync();
-        long position = BinaryHeader.Size;
+        long position = 0;
         while (position < length)
         {
-            var data = await storage.ReadAsync(position, cancellationToken);
-            if (data == null) break;
-            try
+            var header = await storage.ReadHeaderAsync(position);
+            if (header == null) break;
+
+            if ((header.Flags & (byte)RecordFlag.Deleted) == 0)
             {
-                var record = JsonSerializer.Deserialize<AhirRecord>(data);
-                if (record != null && record.Id == id)
+                var data = await storage.ReadAsync(position, cancellationToken);
+                if (data != null)
                 {
-                    _cache.Set(id, data, TimeSpan.FromMinutes(30));
-                    return record;
+                    try
+                    {
+                        var record = JsonSerializer.Deserialize<AhirRecord>(data);
+                        if (record != null && record.Id == id && record.Collection == collection)
+                        {
+                            _cache.Set(id, data, TimeSpan.FromMinutes(30));
+                            return record;
+                        }
+                    }
+                    catch { }
                 }
             }
-            catch { }
-            position += RecordHeader.Size + BitConverter.ToInt32(data[12..16]);
+            position += header.Length;
         }
         return null;
     }

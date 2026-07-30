@@ -6,9 +6,9 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "Ahir.Plugin/1.0.0": {
+      "Ahir.Plugin/1.2.0": {
         "dependencies": {
-          "Ahir.Core": "1.0.0"
+          "Ahir.Core": "1.2.0"
         },
         "runtime": {
           "Ahir.Plugin.dll": {}
@@ -22,21 +22,21 @@
           }
         }
       },
-      "Ahir.Core/1.0.0": {
+      "Ahir.Core/1.2.0": {
         "dependencies": {
           "System.IO.Hashing": "10.0.10"
         },
         "runtime": {
           "Ahir.Core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       }
     }
   },
   "libraries": {
-    "Ahir.Plugin/1.0.0": {
+    "Ahir.Plugin/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -48,7 +48,7 @@
       "path": "system.io.hashing/10.0.10",
       "hashPath": "system.io.hashing.10.0.10.nupkg.sha512"
     },
-    "Ahir.Core/1.0.0": {
+    "Ahir.Core/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -13,3 +13,4 @@ C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Security.dl
 C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\refint\Ahir.Security.dll
 C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Security.pdb
 C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\ref\Ahir.Security.dll
+C:\Users\merte\Desktop\Ahır\src\Ahir.Security\obj\Debug\net9.0\Ahir.Security.sourcelink.json

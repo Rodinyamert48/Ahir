@@ -6,9 +6,9 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "Ahir.Database/1.0.0": {
+      "Ahir.Database/1.2.0": {
         "dependencies": {
-          "Ahir.Core": "1.0.0",
+          "Ahir.Core": "1.2.0",
           "K4os.Compression.LZ4": "1.3.8"
         },
         "runtime": {
@@ -31,21 +31,21 @@
           }
         }
       },
-      "Ahir.Core/1.0.0": {
+      "Ahir.Core/1.2.0": {
         "dependencies": {
           "System.IO.Hashing": "10.0.10"
         },
         "runtime": {
           "Ahir.Core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       }
     }
   },
   "libraries": {
-    "Ahir.Database/1.0.0": {
+    "Ahir.Database/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -64,7 +64,7 @@
       "path": "system.io.hashing/10.0.10",
       "hashPath": "system.io.hashing.10.0.10.nupkg.sha512"
     },
-    "Ahir.Core/1.0.0": {
+    "Ahir.Core/1.2.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

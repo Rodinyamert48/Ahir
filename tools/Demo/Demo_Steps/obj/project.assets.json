@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net9.0-windows7.0": {
-      "Steps/1.0.0": {
+      "Steps/1.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
@@ -18,7 +18,7 @@
     }
   },
   "libraries": {
-    "Steps/1.0.0": {
+    "Steps/1.2.0": {
       "type": "project",
       "path": "../../Steps/Steps.csproj",
       "msbuildProject": "../../Steps/Steps.csproj"
@@ -26,14 +26,14 @@
   },
   "projectFileDependencyGroups": {
     "net9.0-windows7.0": [
-      "Steps >= 1.0.0"
+      "Steps >= 1.2.0"
     ]
   },
   "packageFolders": {
     "C:\\Users\\merte\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.2.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\merte\\Desktop\\Ahır\\tools\\Demo\\Demo_Steps\\Demo_Steps.csproj",
       "projectName": "Demo_Steps",

@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <Version>1.2.0</Version>
+    <FileVersion>1.2.0.0</FileVersion>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <Authors>Ahir Technologies</Authors>
+    <Company>Ahir Technologies</Company>
+    <Product>Ahir</Product>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+</Project>
